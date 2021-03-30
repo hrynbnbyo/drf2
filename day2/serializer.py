@@ -15,13 +15,13 @@ class StudentSerializer(serializers.Serializer):
     phone = serializers.CharField()
 
     # 自定义字段 使用 SerializerMethodField来定义
-    aaa = serializers.SerializerMethodField()
+    age = serializers.IntegerField()
 
     # 自定义字段的属性名随意  但我们需要为该字段提供get_属性名的方法来定义返回值
     # get_字段名：是为了自定义字段提供值的方法  self是参与当前序列化器的类
     # 方法的返回值就是自定义字段返回到前端的值
-    def get_aaa(self, obj):
-        return "bbb"
+#     def get_aaa(self, obj):
+#         return "bbb"
 
     gender = serializers.SerializerMethodField()
 
